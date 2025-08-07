@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Truth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            color: white;
+            overflow: auto; /* Allow scrolling */
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            margin: 20px; /* Add margin to prevent content from touching the edges */
+        }
+        .container img {
+            max-width: 100%; /* Ensure the image does not exceed the container width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 0 auto 20px; /* Center the image and add space below */
+            display: block; /* Make the image a block element */
+        }
+        .btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+        }
+        .secret {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        .image-container {
+            display: none; /* Initially hidden */
+            margin-top: 30px;
+        }
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .reveal {
+            display: block;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/799745e5-8b7a-44ba-9942-3acffe601c1a.png" alt="Discover The Truth heading with blue background and white text" />
+        
+        <h1 class="text-3xl font-bold mt-6 mb-4">What's Really Behind My Instagram?</h1>
+        <p class="text-lg mb-6">There's more to me than meets the eye. Ready to uncover the shocking truth?</p>
+        
+        <button id="revealBtn" class="btn">Click Here For The Truth Behind Me</button>
+        
+        <div id="imageContainer" class="image-container">
+            <img src="https://media.tenor.com/TZTJogFJ4kMAAAAe/padhle-bhai.png" alt="Padhle Bhai" /> <!-- Replace with your image URL -->
+        </div>
+        
+        <p class="secret mt-8">For legal reasons, that's not actually the truth behind me 😉</p>
+    </div>
+
+    <script>
+        document.getElementById('revealBtn').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('imageContainer').classList.add('reveal');
+            
+            // Create slight delay before showing the image for dramatic effect
+            setTimeout(function() {
+                document.getElementById('imageContainer').style.display = 'block';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
